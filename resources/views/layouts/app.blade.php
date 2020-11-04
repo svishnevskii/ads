@@ -74,17 +74,19 @@
         <main class="py-4">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-header">Navigation</div>
-                            <div class="card-body">
-                                <nav class="nav nav-pills flex-column">
-                                  <a class="nav-link @yield('adverts')" href="{{ route('adverts') }}">Adverts</a>
-                                  <a class="nav-link @yield('users')" href="{{ route('users') }}">Users</a>
-                                </nav>
+                    @if(Auth()->user())
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-header">Navigation</div>
+                                <div class="card-body">
+                                    <nav class="nav nav-pills flex-column">
+                                      <a class="nav-link @yield('adverts')" href="{{ route('adverts') }}">Adverts</a>
+                                      <a class="nav-link @yield('users')" href="{{ route('users') }}">Users</a>
+                                    </nav>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
                     @yield('content')
                 </div>
             </div>

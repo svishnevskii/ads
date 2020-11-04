@@ -40,6 +40,26 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Your role') }}</label>
+
+                            <div class="col-md-6">
+                                <select class="form-control @error('role') is-invalid @enderror" required name="role_id">
+                                    <option value="">Select</option>
+                                    <option value="2">Publisher</option>
+                                    <option value="3">Advertiser</option>
+                                </select>
+
+                                </select>
+
+                                @error('role')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">

@@ -12,7 +12,7 @@
                         <thead>
                             <tr>
                               <th scope="col">#id</th>
-                              <th scope="col">domain</th>
+                              <th scope="col">Site</th>
                               <th scope="col"></th>
                               <th scope="col"></th>
                             </tr>
