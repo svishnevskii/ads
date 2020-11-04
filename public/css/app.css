@@ -1,0 +1,19 @@
+/* Navigation */
+.left-side-nav {
+    font-size: 12px;
+    background: #8080804a;
+    border-radius: 6px;
+    padding: 3px 5px;
+}
+
+/* Elements */
+.access-info {
+    font-size: 12px;
+    background: #8080804a;
+    border-radius: 6px;
+    padding: 3px 5px;
+}
+
+.table thead th {
+    font-size: 12px;
+}

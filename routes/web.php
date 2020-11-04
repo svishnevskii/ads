@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/adverts', [App\Http\Controllers\HomeController::class, 'adverts'])->name('adverts');
+Route::get('/report/{id}', [App\Http\Controllers\HomeController::class, 'report'])->name('report');
+Route::get('/users', [App\Http\Controllers\HomeController::class, 'users'])->name('users');
