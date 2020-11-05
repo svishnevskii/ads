@@ -33,6 +33,7 @@
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav mr-auto">
                             <li><span class="left-side-nav">{{ Auth()->user()->name }} your personal ID: {{ Auth()->user()->id }}</span></li>
+                            <li><span class="left-side-nav">Role: {{ Auth()->user()->roles()->first()->name }}</span></li>
                         </ul>
                     @endif
 
