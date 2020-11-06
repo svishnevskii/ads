@@ -18,33 +18,17 @@
                             </tr>
                        </thead>
                         <tbody>
-                            <tr>
-                              <th scope="row">{{ Auth()->user()->id }}</th>
-                              <td>{{ Auth()->user()->name }}</td>
-                              <td><span class="access-info">publisher</span></td>
-                              <td class="text-right">
-                                  <a href="#" class="btn btn-sm btn-primary">Edit</a>
-                                  <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row">{{ Auth()->user()->id }}</th>
-                              <td>{{ Auth()->user()->name }}</td>
-                              <td><span class="access-info">advertiser</span></td>
-                              <td class="text-right">
-                                  <a href="#" class="btn btn-sm btn-primary">Edit</a>
-                                  <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row">{{ Auth()->user()->id }}</th>
-                              <td>{{ Auth()->user()->name }}</td>
-                              <td><span class="access-info">admin</span></td>
-                              <td class="text-right">
-                                  <a href="#" class="btn btn-sm btn-primary">Edit</a>
-                                  <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                              </td>
-                            </tr>
+                            @foreach($users as $user)
+                                <tr>
+                                  <th scope="row">{{ $user->id }}</th>
+                                  <td>{{ $user->name }}</td>
+                                  <td><span class="access-info">{{ $user->getRoleName() }}</span></td>
+                                  <td class="text-right">
+                                      <a href="#" class="btn btn-sm btn-warning">Ban</a>
+                                  </td>
+                                </tr>
+                            @endforeach
+
                         </tbody>
                     </table>
                 </div>

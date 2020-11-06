@@ -20,5 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'adverts'])->name('adverts');
+
+Route::get('/create', [App\Http\Controllers\AdvertController::class, 'create'])->name('create');
 Route::get('/report/{id}', [App\Http\Controllers\HomeController::class, 'report'])->name('report');
 Route::get('/users', [App\Http\Controllers\HomeController::class, 'users'])->name('users');

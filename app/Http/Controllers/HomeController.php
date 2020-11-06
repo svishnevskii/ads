@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -31,9 +32,14 @@ class HomeController extends Controller
         return view('report');
     }
 
-    public function users()
+    public function users(User $users)
     {
-        return view('users');
+        if(Auth()->user()->getRoleId() != config('access.roles.admin')) return back();
+
+        $context = [
+            'users' => $users->all()
+        ];
+        return view('users', $context);
     }
 
     public function profile()

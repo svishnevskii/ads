@@ -1,33 +1,29 @@
 @extends('layouts.app')
 
 @section('title', 'Report')
-@section('report', 'active')
+@section('adverts', 'active')
 
 @section('content')
         <div class="col-md-9">
             <div class="card">
-                <div class="card-header">My sytes <a href="#" class="pull-right btn btn-success">Create</a></div>
+                <div class="card-header">My sytes / mysite.com / report </div>
                 <div class="card-body">
+                    <p>Advertiser: <span class="left-side-nav">Ann D.</span><span class="left-side-nav">ID: 322.</span></p>
+                    <p>Place: <span class="left-side-nav">example.com</span></p>
+
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Visited: <span class="mark-primary">232</span> </li>
+                        <li class="list-inline-item">Views: <span class="mark-primary">88</span></li>
+                    </ul>
+                </div>
+
+                <div class="card-body">
+                    <h5>Referrers</h5>
                     <table class="table">
-                        <thead>
-                            <tr>
-                              <th scope="col">#id</th>
-                              <th scope="col">domain</th>
-                              <th scope="col"></th>
-                              <th scope="col"></th>
-                            </tr>
-                       </thead>
                         <tbody>
                             <tr>
-                              <th scope="row">3133</th>
-                              <td>mysite.com</td>
-                              <td>
-                                  <a href="{{ url('report', ['id'=>111]) }}" class="btn btn-sm btn-link">Report</a>
-                              </td>
-                              <td class="text-right">
-                                  <a href="#" class="btn btn-sm btn-primary">Edit</a>
-                                  <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                              </td>
+                              <td>http://someurl.ru</td>
+                              <td>{{ Auth()->user()->created_at}}</td>
                             </tr>
                         </tbody>
                     </table>

@@ -32,7 +32,8 @@
                     @if(Auth()->user())
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav mr-auto">
-                            <li><span class="left-side-nav">{{ Auth()->user()->name }} your personal ID: {{ Auth()->user()->id }}</span></li>
+                            <li><span class="left-side-nav">{{ Auth()->user()->name }}</span></li>
+                            <li><span class="left-side-nav">Your personal ID: {{ Auth()->user()->id }}</span></li>
                             <li><span class="left-side-nav">Role: {{ Auth()->user()->roles()->first()->name }}</span></li>
                         </ul>
                     @endif
@@ -81,8 +82,11 @@
                                 <div class="card-header">Navigation</div>
                                 <div class="card-body">
                                     <nav class="nav nav-pills flex-column">
-                                      <a class="nav-link @yield('adverts')" href="{{ route('adverts') }}">Adverts</a>
-                                      <a class="nav-link @yield('users')" href="{{ route('users') }}">Users</a>
+
+                                      <a class="nav-link @yield('adverts')" href="{{ route('adverts') }}">Ads</a>
+                                      @if(Auth()->user()->getRoleId() == config('access.roles.admin'))
+                                            <a class="nav-link @yield('users')" href="{{ route('users') }}">Users</a>
+                                      @endif
                                     </nav>
                                 </div>
                             </div>
@@ -93,5 +97,29 @@
             </div>
         </main>
     </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+// Add button functionality
+
+        // document.querySelectorAll('button').forEach(button => {
+        //     button.onclick = function() {
+        //         action = this.dataset.action
+        //
+        //         if (action == 'getedit'){
+        //             getFromEditSimpleTweet(this);
+        //         }else{
+        //             actionPost(this, action);
+        //         }
+        //
+        //         // Check a dynamic form editable tweet
+        //         checkDynamicForm()
+        //         }
+        //
+        //     });
+        //
+        //     // Grid Config
+        //     setCenterGridColumnHeight();
+    });
+    </script>
 </body>
 </html>

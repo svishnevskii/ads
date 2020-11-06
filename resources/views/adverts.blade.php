@@ -6,7 +6,7 @@
 @section('content')
         <div class="col-md-9">
             <div class="card">
-                <div class="card-header">My Adverts <a href="#" class="pull-right btn-sm btn-success">Create</a></div>
+                <div class="card-header">My Adverts <a href="{{ route('create') }}" class="pull-right btn-sm btn-success">Create</a></div>
                 <div class="card-body">
                     <table class="table">
                         <thead>
@@ -25,7 +25,7 @@
                                   <a href="{{ url('report', ['id'=>111]) }}" class="btn btn-sm btn-link">Report</a>
                               </td>
                               <td class="text-right">
-                                  <a href="#" class="btn btn-sm btn-primary">Edit</a>
+                                  <!-- <a href="#" class="btn btn-sm btn-primary">Edit</a> -->
                                   <a href="#" class="btn btn-sm btn-danger">Delete</a>
                               </td>
                             </tr>
